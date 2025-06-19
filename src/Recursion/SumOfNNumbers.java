@@ -11,6 +11,7 @@ public class SumOfNNumbers {
 
     }
 
+
     private static int sumOfNNumbers(int n) {
         // Base case: if n is 0, return 0
         if (n == 0) {
