@@ -1,0 +1,7 @@
+Arraylist
+    1) Jab aap ArrayList se kisi index par element remove karte hain, toh uske baad ke saare elements left shift ho jaate hain aur unki index value ek kam ho jaati hai.
+
+    2)Agar aap starting se (index 0) loop laga kar remove karenge, toh kuch elements skip ho sakte hain ya index out of bound error aa sakti hai.
+
+    3)Isliye, hamesha
+
