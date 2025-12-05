@@ -1,0 +1,44 @@
+Sorting n Integers (Understanding the Brute Force Idea)
+Problem Statement
+
+Given n integer values, arrange them in increasing order.
+
+Example:
+Input → [15, -1, 3, 8, 2, 6]
+Output → [-1, 2, 3, 6, 8, 15]
+
+Brute Force Idea
+
+Generate all possible permutations of the array.
+
+From those permutations, pick the one that is sorted.
+
+Complexity of Brute Force
+
+Number of permutations of n elements = n!
+
+If generating each permutation takes O(n), total work = O(n * n!)
+
+This is extremely inefficient and not practical for large n.
+
+Example (with [3,2,1])
+
+All permutations are:
+
+[3, 2, 1]
+[3, 1, 2]
+[2, 3, 1]
+[2, 1, 3]
+[1, 3, 2]
+[1, 2, 3]   ← sorted permutation
+
+
+We filter the sorted one from all permutations.
+
+Key Takeaway
+
+Brute force sorting = Generate all permutations + Pick sorted one.
+
+Time Complexity ≈ O(n!) → impractical.
+
+That’s why we use efficient sorting algorithms (Merge Sort, Quick Sort, Heap Sort, etc.) with O(n log n).
