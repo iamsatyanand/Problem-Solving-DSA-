@@ -1,38 +1,22 @@
 package Tree;
 
+import com.sun.source.tree.Tree;
+
 public class TreeNode {
-    private int data;
-    private TreeNode left;
-    private TreeNode right;
 
-    public TreeNode(int data) {
-        this.data = data;
-        this.left = null;
-        this.right = null;
-    }
+    int val;
+    TreeNode left;
+    TreeNode right;
 
-    public int getData() {
-        return data;
-    }
+    TreeNode() {}
 
-    public void setData(int data) {
-        this.data = data;
-    }
+    TreeNode(int val){ this.val = val; }
 
-    public TreeNode getLeft() {
-        return left;
-    }
-
-    public void setLeft(TreeNode left) {
+    TreeNode(int val, TreeNode left, TreeNode right){
+        this.val = val;
         this.left = left;
-    }
-
-    public TreeNode getRight() {
-        return right;
-    }
-
-    public void setRight(TreeNode right) {
         this.right = right;
     }
+
 
 }
