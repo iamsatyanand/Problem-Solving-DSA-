@@ -1,0 +1,53 @@
+This is a solid start! You’ve got the core logic of traversing the list down down down. However, for the LeetCode "Design Linked List" problem, this implementation misses a few critical edge cases. If you submit this as-is, it will fail on several test cases.
+
+Here are the missing pieces and why they matter:
+
+1. The Missing Edge Cases
+Inserting at the Head (index == 0) when the list is NOT empty: If index == 0 and this.head already exists, your while loop won't run. prevNode will remain null. When you hit prevNode.next = newNode;, it will throw a NullPointerException.
+
+Inserting at the Tail (index == length):
+The problem description states: "If index equals the length of the linked list, the node will be appended to the end of the linked list." In your code, if you reach the end, currNode becomes null. Your check if (currNode == null) return; immediately exits, meaning it completely fails to append at the tail.
+
+Invalid Indices: If index is greater than the length of the list, it should not insert anything. Your code handles this correctly by returning, but we need to ensure the fix for the tail doesn't break this.
+
+2. Modified Code
+Here is the corrected and clean version of your method that covers all LeetCode requirements:
+
+Java
+public void addAtIndex(int index, int val) {
+    // 1. If index is 0, we are inserting a new head (works for both empty and non-empty lists)
+    if (index == 0) {
+        Node newNode = new Node(val);
+        newNode.next = this.head;
+        this.head = newNode;
+        return;
+    }
+
+    Node prevNode = null;
+    Node currNode = this.head;
+    int i = 0;
+
+    // Traverse to find the correct insertion point
+    while (i < index && currNode != null) {
+        i++;
+        prevNode = currNode;
+        currNode = currNode.next;
+    }
+
+    // 2. Check if the index is out of bounds.
+    // If we finished the loop and i != index, it means index > length.
+    if (i != index) {
+        return;
+    }
+
+    // 3. Insert the node (Works for middle insertion and tail insertion where currNode is null)
+    Node newNode = new Node(val);
+    prevNode.next = newNode;
+    newNode.next = currNode;
+}
+3. Key Changes Explained
+Handled index == 0 separately: By checking this at the very beginning, we completely avoid the NullPointerException caused by prevNode being null.
+
+Changed the null check condition: Instead of if (currNode == null) return;, we now check if (i != index) return;.
+
+If you want to insert at the very end, the loop stops exactly when i == index and currNode == null. Because i == index, the code skips the return and successfully appends the node to prevNode.next.
