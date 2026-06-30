@@ -51,3 +51,14 @@ Handled index == 0 separately: By checking this at the very beginning, we comple
 Changed the null check condition: Instead of if (currNode == null) return;, we now check if (i != index) return;.
 
 If you want to insert at the very end, the loop stops exactly when i == index and currNode == null. Because i == index, the code skips the return and successfully appends the node to prevNode.next.
+
+3. Time Complexity
+
+Current complexities:
+
+Method	Complexity
+get	O(n)
+addAtHead	O(1)
+addAtTail	O(n)
+addAtIndex	O(n)
+deleteAtIndex	O(n)

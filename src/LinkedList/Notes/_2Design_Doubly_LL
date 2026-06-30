@@ -1,0 +1,132 @@
+Implementing a Doubly Linked List is a great next step! The main difference is that each node now has two pointers: next (pointing forward) and prev (pointing backward). This makes operations like removing from the tail much faster because you don't have to traverse the entire list to find the second-to-last node.Let's break this down into a clean, separated structure just like we did for the singly linked list.File 1: DoublyNode.javaEach node now tracks its value, the next node, and the previous node.Javapackage LinkedList;
+
+public class DoublyNode {
+    public int val;
+    public DoublyNode next;
+    public DoublyNode prev;
+
+    public DoublyNode(int val) {
+        this.val = val;
+        this.next = null;
+        this.prev = null;
+    }
+}
+File 2: MyDoublyLinkedList.javaTo make things highly efficient, we will track both the head and the tail of the list. Tracking the tail allows us to append or remove from the end in $O(1)$ constant time instead of looping through everything.Javapackage LinkedList;
+
+public class MyDoublyLinkedList {
+    private DoublyNode head;
+    private DoublyNode tail;
+
+    public MyDoublyLinkedList() {
+        this.head = null;
+        this.tail = null;
+    }
+
+    // 1. Add at Head
+    public void addAtHead(int val) {
+        DoublyNode newNode = new DoublyNode(val);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head.prev = newNode;
+            head = newNode;
+        }
+    }
+
+    // 2. Add at Tail
+    public void addAtTail(int val) {
+        DoublyNode newNode = new DoublyNode(val);
+        if (tail == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            newNode.prev = tail;
+            tail = newNode;
+        }
+    }
+
+    // 3. Remove from Head
+    public void removeFromHead() {
+        if (head == null) return; // List is empty
+
+        if (head == tail) { // Only one element in the list
+            head = null;
+            tail = null;
+        } else {
+            head = head.next;
+            head.prev = null; // Sever link to old head
+        }
+    }
+
+    // 4. Remove from Tail
+    public void removeFromTail() {
+        if (tail == null) return; // List is empty
+
+        if (head == tail) { // Only one element in the list
+            head = null;
+            tail = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null; // Sever link to old tail
+        }
+    }
+
+    // Helper to print list forward
+    public void printListForward() {
+        StringBuilder sb = new StringBuilder("Forward: ");
+        DoublyNode temp = head;
+        while (temp != null) {
+            sb.append(temp.val).append(" <-> ");
+            temp = temp.next;
+        }
+        sb.append("null");
+        System.out.println(sb.toString());
+    }
+
+    // Helper to print list backward (verifies that 'prev' pointers work!)
+    public void printListBackward() {
+        StringBuilder sb = new StringBuilder("Backward: ");
+        DoublyNode temp = tail;
+        while (temp != null) {
+            sb.append(temp.val).append(" <-> ");
+            temp = temp.prev;
+        }
+        sb.append("null");
+        System.out.println(sb.toString());
+    }
+}
+File 3: _2Design_DoublyLinkedList.javaYou can create this new test runner file to verify your logic and ensure both forward and backward pointer structures remain intact.Javapackage LinkedList;
+
+public class _2Design_DoublyLinkedList {
+    public static void main(String[] args) {
+        System.out.println("--- 🚀 Testing Doubly Linked List Implementation 🚀 ---\n");
+
+        MyDoublyLinkedList dList = new MyDoublyLinkedList();
+
+        // Test adding
+        System.out.println("🧪 Adding 10 then 20 to Head...");
+        dList.addAtHead(10);
+        dList.addAtHead(20);
+        dList.printListForward(); // Expected: 20 <-> 10 <-> null
+
+        System.out.println("\n🧪 Adding 30 then 40 to Tail...");
+        dList.addAtTail(30);
+        dList.addAtTail(40);
+        dList.printListForward();  // Expected: 20 <-> 10 <-> 30 <-> 40 <-> null
+        dList.printListBackward(); // Expected: 40 <-> 30 <-> 10 <-> 20 <-> null
+
+        // Test removing
+        System.out.println("\n🧪 Removing from Head...");
+        dList.removeFromHead();
+        dList.printListForward(); // Expected: 10 <-> 30 <-> 40 <-> null
+
+        System.out.println("\n🧪 Removing from Tail...");
+        dList.removeFromTail();
+        dList.printListForward();  // Expected: 10 <-> 30 <-> null
+        dList.printListBackward(); // Expected: 30 <-> 10 <-> null
+    }
+}
+Key Doubly Linked List Concept Rules to Remember:The Empty State Trap: When adding to an empty list, both head and tail must point to your new node.The Single Element Trap: When removing the last remaining element from a list, always reset both head and tail to null.Double Linkages: Whenever you link A.next = B, you must immediately manage its matching pair: B.prev = A. Missing one of these creates a broken chain.
