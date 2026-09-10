@@ -1,0 +1,75 @@
+💳 Paytm SDE-2 | Java Backend (2-4 Years)
+🔥 Top 25 Recent Interview Questions (December 2025)
+🧱 System Design & Backend Architecture
+1️⃣ Design a scalable payment service ensuring idempotency, retries & failure handling
+2️⃣ How do you design idempotent APIs for payment retries and duplicate requests?
+3️⃣ Design a distributed caching strategy (Redis, invalidation, consistency)
+4️⃣ How would you design a notification/event-driven system (Kafka + consumers) for payments?
+5️⃣ How do you choose SQL vs NoSQL for wallets, transactions & audit logs?
+6️⃣ Design schema & flow for wallet + payment + transaction reconciliation
+7️⃣ How would you break a monolith into microservices in a fintech ecosystem?
+8️⃣ How do you ensure data consistency across multiple services without distributed transactions?
+9️⃣ How would you handle partial failures in a payment flow (wallet debited but order failed)?
+🔟 How do you design systems for peak traffic events (sales, cashback drops, midnight offers)?
+🧩 Core Java, Concurrency & Backend Coding
+1️⃣1️⃣ Explain Java Memory Model & real backend memory-leak scenarios
+1️⃣2️⃣ How do you design a highly concurrent service handling thousands of TPS in Java?
+1️⃣3️⃣ Implement a thread-safe Singleton / ExecutorService
+1️⃣4️⃣ Synchronization vs Concurrent Collections — when & why?
+1️⃣5️⃣ How do you debug CPU spikes or thread contention in production Java services?
+1️⃣6️⃣ How does Java handle async processing internally (CompletableFuture, thread pools)?
+1️⃣7️⃣ How do you handle race conditions in high-concurrency services?
+🔗 DSA + Practical Problem Solving
+1️⃣8️⃣ Design a rate limiter using sliding window / token bucket
+1️⃣9️⃣ Design an in-memory cache with TTL + eviction strategy
+2️⃣0️⃣ Search in rotated sorted array / linked list edge cases
+2️⃣1️⃣ Given millions of transactions, find fraudulent patterns efficiently
+🔐 Backend & Fintech Concepts
+2️⃣2️⃣ JWT vs Session-based authentication — design & trade-offs
+2️⃣3️⃣ Database locking & isolation levels in concurrent transactions
+2️⃣4️⃣ Local cache vs distributed cache — real production use cases
+2️⃣5️⃣ How do you optimize slow queries on high-volume transaction tables?
+
+Java
+
+1. What is the difference between Stream and Collection in Java?
+2. Given a list of Strings, how would you filter strings with length greater than 3, sort them based on length, and return the top 3 strings?
+3. How do you make a LinkedList synchronized?
+4. What is the difference between synchronized and Lock?
+5. What are Optimistic and Pessimistic Locking?
+
+Spring Boot / JPA
+
+6. What is the purpose of Interceptors in Spring Boot?
+7. How do you manage commit and rollback in Spring?
+8. How would you identify and solve an N+1 query problem?
+9. How can you skip one field from being persisted in the database using Spring Data JPA?
+
+Microservices / Distributed Systems
+
+10. How would you manage transactions in a distributed system?
+11. What is the Outbox Design Pattern?
+12. What is the SAGA Design Pattern?
+13. What is the 2-Phase Commit (2PC) protocol?
+14. What is the Circuit Breaker Pattern?
+15. How would you secure 100 microservices?
+16. What is the purpose of an API Gateway?
+17. How does JWT authentication work?
+
+REST API
+
+18. What is the Richardson Maturity Model?
+
+Kubernetes
+
+19. What is a Liveness Probe in Kubernetes?
+20. What is a Readiness Probe in Kubernetes?
+
+AI
+
+21. What are the basics of prompting in AI?
+22. How can you effectively use tokens in AI applications?
+
+Project Discussion
+
+23. Can you explain your current project, architecture, responsibilities, and key technical challenges?

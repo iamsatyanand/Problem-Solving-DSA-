@@ -1,0 +1,33 @@
+🏛️ Bank of New York (BNY,Mellon)
+💥 SDE-2 Java Backend Questions (January,2026)
+📈 DSA
+Q1. Given an integer array and a window size K, return the maximum element in every sliding window.
+Q2. Given an array of values, for each element find the next greater element on the right.
+Q3. Given an integer array, count the number of subarrays whose sum equals K.
+Q4. Given a binary tree, flatten it into a linked list in-place following the same order as a pre-order traversal.
+🧩 Core Java & Concurrency
+Q5. Explain different types of thread pools available in Java and how you decide which one to use.
+Q6. How does ConcurrentHashMap work internally in Java 8 and later versions?
+Q7. What is false sharing in multithreading and how do you avoid it in low-latency systems?
+Q8. How do Java locks work internally and when would you prefer ReentrantLock over synchronized?
+Q9. How do you analyze and fix thread contention issues in production systems?
+Q10. What JVM garbage collection metrics do you monitor in production and why?
+🏷️ Spring Boot
+Q11. How does Spring Boot handle dependency injection internally? Explain the bean lifecycle.
+Q12. How do you implement request idempotency in backend services?
+Q13. How do you design secure and scalable authentication and authorization for banking APIs?
+Q14. How do you handle partial failures when multiple downstream services are involved?
+Q15. What strategies do you use to version APIs without breaking existing consumers?
+🗄️ Database & Indexing
+Q16. How do database indexes work internally and how do you decide index ordering?
+Q17. How do you analyze and optimize a slow SQL query running on millions of records?
+Q18. How do you design database schemas to handle high-volume transactional data?
+Q19. How do you ensure data consistency when concurrent debit and credit operations occur?
+🧱 System Design
+Q20. Design a high-throughput transaction processing system with strong consistency guarantees.
+Q21. Design a distributed caching strategy for frequently accessed account balance data.
+Q22. How would you design an event-driven audit logging system for financial transactions?
+Q23. Design payment APIs that safely handle retries and duplicate requests.
+🧪 Performance & Reliability
+Q24. How do you investigate and resolve sudden CPU or memory spikes in production systems?
+Q25. What deployment strategies do you prefer for critical banking applications and why?
