@@ -31,6 +31,7 @@ public class Q2SmallestMissingElementInASortedArray {
         int missingNumber = findMissingElementOptimised(arr);
         if(missingNumber != -1){
             System.out.println("Missing number is : "+missingNumber);
+
         }
         else{
             System.out.println("No number is missing");
