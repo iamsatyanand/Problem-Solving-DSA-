@@ -101,7 +101,7 @@ public class MyDoublyLinkedList {
 File 3: _2Design_DoublyLinkedList.javaYou can create this new test runner file to verify your logic and ensure both forward and backward pointer structures remain intact.Javapackage LinkedList;
 
 public class _2Design_DoublyLinkedList {
-    public static void main(String[] args) {
+    public static void main(JavaBasics.String[] args) {
         System.out.println("--- 🚀 Testing Doubly Linked List Implementation 🚀 ---\n");
 
         MyDoublyLinkedList dList = new MyDoublyLinkedList();

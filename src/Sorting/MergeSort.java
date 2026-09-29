@@ -16,7 +16,7 @@
 ////
 //public class MergeSort {
 //
-//    public static void main(String[] args) {
+//    public static void main(JavaBasics.String[] args) {
 //        // Taking input from user
 //        Scanner scan = new Scanner(System.in);
 //        System.out.println("Enter the size of the array:");
